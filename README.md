@@ -1,18 +1,18 @@
 
-```
-# Gemini Chatbot with Tools & LangSmith Tracing
+# Gemini Chatbot with Tools & LangGraph Tracing
 
-This project demonstrates how to build an agent-based chatbot using **LangChain**, **Google Gemini API**, and **LangSmith** for observability. It includes experiments with tool-augmented agents, Human-in-the-Loop (HITL) control, and Gemini function calling. All implementations are provided as Jupyter Notebooks for transparency and experimentation.
+This project showcases an agent-based chatbot architecture built with **LangGraph** and enhanced using **Google Gemini API**. It includes modular experiments with tool-augmented agents, Human-in-the-Loop (HITL) interactions, and function calling support. **LangSmith** is integrated for observability and debugging. All implementations are presented as Jupyter Notebooks for transparency and iterative testing.
 
 ---
 
 ## Features
 
-- Gemini-powered chatbot built with LangChain
-- Custom tools (e.g., stock price retriever, calculator)
-- Human-in-the-Loop (HITL) agent control
-- LangSmith integration for tracing and debugging
-- Interactive `.ipynb` notebooks for modular testing
+- Gemini-powered chatbot agents using LangGraph
+- Modular agent workflows with stateful execution
+- Custom tools (e.g., stock checker, calculator)
+- Human-in-the-Loop (HITL) control agents
+- LangSmith integration for real-time tracing and debugging
+- Clear separation of agents through individual notebooks
 
 ---
 
@@ -20,16 +20,16 @@ This project demonstrates how to build an agent-based chatbot using **LangChain*
 
 ```
 
-├── .env # Environment variables (empty placeholder)
+├── .env                  # Environment variables (empty placeholder)
 ├── .gitignore
 ├── README.md
-├── requirements.txt # Auto-generated from your environment
-├── uv.lock # Lockfile (optional, for uv users)
-├── agents/ # Agent implementations and routing logic
-│ ├── base_agent.ipynb
-│ ├── tools_agent.ipynb
-│ ├── hitl_agent.ipynb
-│ └── ...
+├── requirements.txt      # Auto-generated from your environment
+├── uv.lock               # Lockfile (optional, for uv users)
+├── agents/               # Agent implementations and routing logic
+│   ├── base\_agent.ipynb
+│   ├── tools\_agent.ipynb
+│   ├── hitl\_agent.ipynb
+│   └── ...
 
 ````
 
@@ -40,8 +40,8 @@ This project demonstrates how to build an agent-based chatbot using **LangChain*
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/your-username/gemini-chatbot-langchain.git](https://github.com/fatimafarhan2/GeminiGraph-Tool-Using-Agents-with-LangGraph)
-cd gemini-chatbot-langchain
+git clone https://github.com/fatimafarhan2/GeminiGraph-Tool-Using-Agents-with-LangGraph.git
+cd GeminiGraph-Tool-Using-Agents-with-LangGraph
 ````
 
 ### 2. Create Virtual Environment & Install Dependencies
@@ -57,13 +57,13 @@ Or using `pip`:
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate        # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
 ### 3. Add a `.env` File
 
-Create a `.env` file in the root directory and add the following environment variables:
+Create a `.env` file in the root directory and include:
 
 ```env
 GOOGLE_API_KEY=
@@ -73,40 +73,41 @@ LANGSMITH_API_KEY=
 LANGSMITH_PROJECT=
 ```
 
+These are required for authenticating the Gemini API and enabling LangSmith tracing.
+
 ---
 
 ## Running the Notebooks
 
-You can open and execute the notebooks using Jupyter:
+You can open and execute the notebooks using:
 
 ```bash
 jupyter lab
 ```
 
-Each notebook focuses on a different type of agent setup or LangChain feature.
+Each notebook demonstrates a unique agent setup powered by LangGraph and Gemini, including support for external tools and HITL configurations.
 
 ---
 
 ## LangSmith Tracing
 
-LangSmith is integrated to help visualize the agent's tool usage, decision-making, and chain execution. Make sure your `.env` is correctly configured for full observability.
+LangSmith allows detailed inspection of agent behavior, including node transitions, tool invocations, and error handling. Ensure your `.env` is properly configured for full observability.
 
 ---
 
 ## Notes
 
-* `.env` is intentionally tracked as a placeholder (do not commit actual secrets).
-* `.venv`, `.ipynb_checkpoints`, and other build artifacts are excluded via `.gitignore`.
+* `.env` is a tracked placeholder; do not commit your actual credentials.
+* Artifacts like `.venv` and `.ipynb_checkpoints` are excluded via `.gitignore`.
 
 ---
 
 ## References
 
-* [LangChain Documentation](https://docs.langchain.com/)
+* [LangGraph Documentation](https://docs.langchain.com/langgraph/)
 * [LangSmith](https://smith.langchain.com/)
 * [Gemini via Google Vertex AI](https://cloud.google.com/vertex-ai)
 * [uv Package Manager](https://github.com/astral-sh/uv)
 
 ```
-
 
